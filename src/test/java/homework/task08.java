@@ -3,6 +3,7 @@ package homework;
 import base_urls.HomeworkBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
+import testData.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,9 +37,12 @@ public class task08 extends HomeworkBaseUrl {
         spec.pathParams("first" , "api" , "second", "users");
 
        // create an empty map and assign values
-        Map<String , Object> expectedData = new HashMap<>();
-        expectedData.put("name" , "morpheus");
-        expectedData.put("job" , "leader");
+        Map<String , Object> expectedData = JsonPlaceHolderTestData.expectedDataMap("morpheus","leader");
+
+        //this is the first way but not prefer, we move this to testData package to prevent hard coded
+//                new HashMap<>();
+//        expectedData.put("name" , "morpheus");
+//        expectedData.put("job" , "leader");
 
         //Send the request and post the response
         Response response = given(spec)
