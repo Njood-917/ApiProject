@@ -1,8 +1,12 @@
 package request;
 
 import base_urls.JsonPlaceHolderBaseUrl;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import pojos.JsonPlaceHolderPojo;
+
+import static io.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
 
 public class C18_PostRequestPojo extends JsonPlaceHolderBaseUrl {
     /*
@@ -34,6 +38,19 @@ public class C18_PostRequestPojo extends JsonPlaceHolderBaseUrl {
         //Set expected Data -- with pojo class
        JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55 ,"Tidy your room" , false);
         System.out.println("expectedData = " + expectedData);
+
+        //Send the request and get the response
+       Response response= given(spec).body(expectedData).post("{first}");
+       response.prettyPrint();
+
+       //Do Assertion
+        JsonPlaceHolderPojo actualData=  response.as(JsonPlaceHolderPojo.class);
+        System.out.println("actualData = " + actualData);
+
+        assertEquals(response.statusCode(),201);
+        assertEquals(actualData.getTitle(),expectedData.getTitle());
+        assertEquals(actualData.getCompleted(),expectedData.getCompleted());
+        assertEquals(actualData.getUserId(),expectedData.getUserId());
 
 
 
