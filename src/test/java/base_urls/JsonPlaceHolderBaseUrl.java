@@ -5,15 +5,19 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeMethod;
 
-public class BookerBaseUrl {
+public class JsonPlaceHolderBaseUrl {
+
     protected RequestSpecification spec;
 
     @BeforeMethod
-    public void setUp(){
+    public void setSpec() {
 
         spec = new RequestSpecBuilder()
-                .setBaseUri("https://restful-booker.herokuapp.com")
+                .setBaseUri("https://jsonplaceholder.typicode.com")
                 .setContentType(ContentType.JSON)
                 .build();
+
     }
+
+
 }

@@ -10,6 +10,21 @@ public class JsonPlaceHolderTestData {
         expectedData.put("job", "job");
          return expectedData;
 
+    }
+    public static Map<String, Object> expectedDataMap2(Integer userId, String title, Boolean completed) {
+
+        Map<String, Object> expectedData2 = new HashMap<>();
+        if (userId!=null){
+            expectedData2.put("userId", userId);
+        }
+        if (title!=null){
+            expectedData2.put("title", title);
+        }
+        if (completed!=null){
+            expectedData2.put("completed", completed);
+        }
+
+        return expectedData2;
 
     }
 }
