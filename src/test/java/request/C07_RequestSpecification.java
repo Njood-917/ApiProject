@@ -20,25 +20,24 @@ public class C07_RequestSpecification extends BookerBaseUrl {
 */
 
     @Test
-    public void requestSpecificationTest (){
+    public void requestSpecificationTest() {
 
 //        1. Set the URL
-spec.pathParams("first", "booking")
-        .queryParams("firstname" , "John" , "lastname", "Doe");
+        spec.pathParams("first", "booking")
+                .queryParams("firstname", "John", "lastname", "Doe");
 
 //        2. Set the expected data
 
 
 //        3. Send the request and get the response
-      Response response =  given(spec).get("{first}");
-      response.prettyPrint();
+        Response response = given(spec).get("{first}");
+        response.prettyPrint();
 
 
 //        4. Do Assertion
 
         response.then().statusCode(200);
         assertTrue(response.asString().contains("bookingid"));
-
 
 
     }
