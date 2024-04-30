@@ -36,7 +36,7 @@ public class task09 extends UserBaseUrl {
     @Test
     public void test(){
         //Set the Url
-        spec.pathParams("first", "v2" , "second" , "user");
+        spec.pathParams("first", "user");
 
         // create an empty map and assign values
         Map<String , Object> expectedData = JsonPlaceHolderUserTestData.expectedDataMap(1,"john01" ,"John" , "Doe" ,
@@ -45,7 +45,7 @@ public class task09 extends UserBaseUrl {
         //Send the request and post the response
         Response response = given(spec)
                 .body(expectedData)
-                .post("{first}/{second}/");
+                .post("{first}");
         response.prettyPrint();
    // Assertions
         response

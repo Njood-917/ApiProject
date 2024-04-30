@@ -1,52 +1,73 @@
 package pojos;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class PetPojo {
-    private long id;
-    private String name;
-    private String status;
+public class PetPojo{
+	private List<String> photoUrls;
+	private String name;
+	private Integer id;
+	private Category category;
+	private List<TagsItem> tags;
+	private String status;
 
-    public PetPojo() {
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public PetPojo(long id, String name, String status) {
-        this.id = id;
-        this.name = name;
-        this.status = status;
-    }
+	public void setPhotoUrls(List<String> photoUrls) {
+		this.photoUrls = photoUrls;
+	}
 
-    public long getId() {
-        return id;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setTags(List<TagsItem> tags) {
+		this.tags = tags;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public List<String> getPhotoUrls(){
+		return photoUrls;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	public String getName(){
+		return name;
+	}
 
-    @Override
-    public String toString() {
-        return "PetPojo{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", status='" + status + '\'' +
-                '}';
-    }
+	public Integer getId(){
+		return id;
+	}
+
+	public Category getCategory(){
+		return category;
+	}
+
+	public List<TagsItem> getTags(){
+		return tags;
+	}
+
+	public String getStatus(){
+		return status;
+	}
+
+	@Override
+	public String toString(){
+		return
+				"PetPojo{" +
+						"photoUrls = '" + photoUrls + '\'' +
+						",name = '" + name + '\'' +
+						",id = '" + id + '\'' +
+						",category = '" + category + '\'' +
+						",tags = '" + tags + '\'' +
+						",status = '" + status + '\'' +
+						"}";
+	}
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/nona5/IdeaProjects/APIProject/src/test/java/homework/task13">
+        <classes>
+            <class name="homework.task13.CreateUser">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="homework.task13.DeleteUser">
+                <methods>
+                    <include name="testDeleteUser"/>
+                </methods>
+            </class>
+            <class name="homework.task13.GetUser">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="homework.task13.UpdateUser">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
