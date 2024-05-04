@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="homework/task15">
+        <classes>
+            <class name="homework.task15.CreateUserList">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+            <class name="homework.task15.GetUserList"/>
+            <class name="homework.task15.UpdateUserList"/>
+            <class name="homework.task15.DeleteUserList">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

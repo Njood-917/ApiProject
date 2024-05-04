@@ -30,7 +30,7 @@ public class CreateUser extends UserBaseUrl {
 
         UserPojo expectedData = ObjectMapperUtils.convertJsonToJava(strJson , UserPojo.class);
         System.out.println("expectedData = " + expectedData);
-        //Set the request and get the response
+        //Send the request and get the response
        Response response = given(spec).body(expectedData).post("{first}");
        response.prettyPrint();
        //Do Assertion
